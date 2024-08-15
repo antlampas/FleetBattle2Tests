@@ -2,9 +2,9 @@
 
 add_executable(utilitiesTests
                 testDecodeCoordinates.cpp
-#                testIsHorizontal.cpp
-#                testIsVertical.cpp
-#                testShipsOverlap.cpp
+                testIsHorizontal.cpp
+                testIsVertical.cpp
+                testShipsOverlap.cpp
               )
 
 target_link_libraries(utilitiesTests PRIVATE Catch2::Catch2WithMain)
