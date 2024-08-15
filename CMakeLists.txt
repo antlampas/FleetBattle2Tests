@@ -65,4 +65,4 @@ endif(UTILITIES GREATER -1)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/_deps/fleetbattle-src/include)
 
-add_subdirectory(src          ${CMAKE_BUILD_TYPE}/Tests)
+add_subdirectory(src ${CMAKE_BUILD_TYPE}/Tests)
