@@ -2,11 +2,15 @@
 
 #include "utilities.hpp"
 
+using namespace fleetBattle;
+
 TEST_CASE("Decode coordinates", "[decodeCoordinates]"){
     for(char column: {'a','b','c','d','e','f','g','h','i','j'})
-        for(int row: {1,..,10})
+    {
+        for(int row: {1,2,3,4,5,6,7,8,9,10})
         {
-            REQUIRE(decodeCoordinates(std::string(1,column)+std::itos(row)) == decodedCoordinates(static_cast<int>(column)-97,row));
-            REQUIRE(decodeCoordinates(std::string(1,column-32)+std::itos(row)) == decodedCoordinates(static_cast<int>(column)-65,row));
+            REQUIRE(decodeCoordinates(std::string(1,column)+std::to_string(row))    == DecodedCoordinates{static_cast<int>(column)-97,row});
+            REQUIRE(decodeCoordinates(std::string(1,column-32)+std::to_string(row)) == DecodedCoordinates{static_cast<int>(column)-65,row});
         }
+    }
 }

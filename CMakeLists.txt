@@ -13,7 +13,7 @@ include(FetchContent)
 
 FetchContent_Declare(
   fleetbattle
-  GIT_REPOSITORY https://github.com/antlampas/FleetBattle.git
+  GIT_REPOSITORY https://github.com/antlampas/FleetBattle2.git
   GIT_BRANCH     master
 )
 
