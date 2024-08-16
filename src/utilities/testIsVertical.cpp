@@ -1,23 +1,35 @@
 #include "catch2/catch_test_macros.hpp"
+#include "catch2/benchmark/catch_benchmark.hpp"
 
 #include "utilities.hpp"
 
 using namespace fleetBattle;
 
-std::vector<ShipPosition> ships2    {   ShipPosition({0,0},{3,0}),
-                                        ShipPosition({0,0},{5,0}),
-                                        ShipPosition({2,2},{3,5}),
-                                        ShipPosition({1,1},{3,3}),
-                                        ShipPosition({1,0},{1,5}),
-                                        ShipPosition({1,0},{1,7})
+std::vector<ShipPosition> ships2    {   ShipPosition({0,0},{3,0}), //True
+                                        ShipPosition({0,0},{5,0}), //True
+                                        ShipPosition({2,2},{3,5}), //False
+                                        ShipPosition({1,1},{3,3}), //False
+                                        ShipPosition({1,0},{1,5}), //False
+                                        ShipPosition({1,0},{1,7})  //False
                                     };
 
-TEST_CASE("Ship is horizontal","[testIsVertical]")
+TEST_CASE("Ship is vertical","[testIsVertical][!benchmark]")
 {
-    CHECK(isVertical(ships2.at(0)) == true);
-    CHECK(isVertical(ships2.at(1)) == true);
-    CHECK(isVertical(ships2.at(2)) == false);
-    CHECK(isVertical(ships2.at(3)) == false);
-    CHECK(isVertical(ships2.at(4)) == false);
-    CHECK(isVertical(ships2.at(5)) == false);
+    auto ship = ships2.begin();
+    for(int i=0;i<2;i++,ship++)
+    {
+        CHECK(isVertical(*ship) == true);
+        BENCHMARK("Check ship is vertical")
+        {
+            return isVertical(*ship);
+        };
+    }
+    for(int i=0;ship!=ships2.end();i++,ship++)
+    {
+        CHECK(isVertical(*ship) == true);
+        BENCHMARK("Check ship is vertical")
+        {
+            return isVertical(*ship);
+        };
+    }
 }
