@@ -14,10 +14,10 @@ std::vector<ShipPosition> ships1    {   ShipPosition({0,0},{0,1}),
 
 TEST_CASE("Ship is horizontal","[testIsHorizontal]")
 {
-    REQUIRE(isHorizontal(ships1.at(0)) == true);
-    REQUIRE(isHorizontal(ships1.at(1)) == true);
-    REQUIRE(isHorizontal(ships1.at(2)) == false);
-    REQUIRE(isHorizontal(ships1.at(3)) == false);
-    REQUIRE(isHorizontal(ships1.at(4)) == false);
-    REQUIRE(isHorizontal(ships1.at(5)) == false);
+    CHECK(isHorizontal(ships1.at(0)) == true);
+    CHECK(isHorizontal(ships1.at(1)) == true);
+    CHECK(isHorizontal(ships1.at(2)) == false);
+    CHECK(isHorizontal(ships1.at(3)) == false);
+    CHECK(isHorizontal(ships1.at(4)) == false);
+    CHECK(isHorizontal(ships1.at(5)) == false);
 }

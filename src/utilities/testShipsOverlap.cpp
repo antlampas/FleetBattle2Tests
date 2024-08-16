@@ -15,7 +15,7 @@ std::vector<ShipPosition> ships3    {   ShipPosition({0,0},{3,0}),
 
 TEST_CASE("Ships are overlapping","testShipsOverlap")
 {
-    REQUIRE(shipsOverlap(ships3.at(0),ships3.at(1)) == true);
-    REQUIRE(shipsOverlap(ships3.at(0),ships3.at(2)) == false);
-    REQUIRE(shipsOverlap(ships3.at(4),ships3.at(3)) == false);
+    CHECK(shipsOverlap(ships3.at(0),ships3.at(1)) == true);
+    CHECK(shipsOverlap(ships3.at(0),ships3.at(2)) == false);
+    CHECK(shipsOverlap(ships3.at(4),ships3.at(3)) == false);
 }

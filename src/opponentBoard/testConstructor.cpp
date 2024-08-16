@@ -19,5 +19,5 @@ TEST_CASE("Opponent board construction", "[testOpponentBoardConstructor]")
 
     fleetBattle::opponentBoard board;
 
-    REQUIRE(board.getBoardStatus() == blankBoard);
+    CHECK(board.getBoardStatus() == blankBoard);
 }

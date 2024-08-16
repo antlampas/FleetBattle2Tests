@@ -14,7 +14,7 @@ TEST_CASE("Set Square status", "[testSetSquareStatus]")
         for(int column: {0,1,2,3,4,5,6,7,8,9})
         {
             board.setSquareStatus(std::pair<int,int>(row,column),'S');
-            REQUIRE(board.getSquareStatus(std::pair<int,int>(row,column)) == 'S');
+            CHECK(board.getSquareStatus(std::pair<int,int>(row,column)) == 'S');
         }
     }
 }
