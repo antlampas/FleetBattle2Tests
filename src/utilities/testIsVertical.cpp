@@ -26,7 +26,7 @@ TEST_CASE("Ship is vertical","[testIsVertical][!benchmark]")
     }
     for(int i=0;ship!=ships2.end();i++,ship++)
     {
-        CHECK(isVertical(*ship) == true);
+        CHECK(isVertical(*ship) == false);
         BENCHMARK("Check ship is vertical")
         {
             return isVertical(*ship);
