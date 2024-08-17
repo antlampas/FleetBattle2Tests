@@ -22,7 +22,7 @@ TEST_CASE("Decode coordinates", "[decodeCoordinates]"){
     }
 }
 
-TEST_CASE("Decode coordinates benchmark"."[!benchmark]")
+TEST_CASE("Decode coordinates benchmark","[!benchmark]")
 {
     for(char column: {'a','b','c','d','e','f','g','h','i','j'})
     {
