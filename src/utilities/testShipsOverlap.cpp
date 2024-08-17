@@ -14,12 +14,15 @@ std::vector<ShipPosition> ships3    {   ShipPosition({0,0},{3,0}),
                                     };
 
 
-TEST_CASE("Ships are overlapping","[testShipsOverlap][!benchmark]")
+TEST_CASE("Ships are overlapping","[testShipsOverlap]")
 {
     CHECK(shipsOverlap(ships3.at(0),ships3.at(1)) == true);
     CHECK(shipsOverlap(ships3.at(0),ships3.at(2)) == false);
     CHECK(shipsOverlap(ships3.at(4),ships3.at(3)) == false);
+}
 
+TEST_CASE("Ships are overlapping benchmark","[!benchmark]")
+{
     BENCHMARK("Ships Overlap")
     {
         return shipsOverlap(ships3.at(0),ships3.at(1));

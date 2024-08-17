@@ -13,12 +13,24 @@ std::vector<ShipPosition> ships1    {   ShipPosition({0,0},{0,1}), //True
                                         ShipPosition({2,1},{5,1})  //False
                                     };
 
-TEST_CASE("Ship is horizontal","[testIsHorizontal][!benchmark]")
+TEST_CASE("Ship is horizontal","[testIsHorizontal]")
 {
     auto ship = ships1.begin();
     for(int i=0;i<2;i++,ship++)
     {
         CHECK(isHorizontal(*ship) == true);
+    }
+    for(int i=0;ship!=ships1.end();i++,ship++)
+    {
+        CHECK(isHorizontal(*ship) == false);
+    }
+}
+
+TEST_CASE("Ship is horizontal benchmark","[!benchmark]")
+{
+    auto ship = ships1.begin();
+    for(int i=0;i<2;i++,ship++)
+    {
         BENCHMARK("Check ship is vertical")
         {
             return isHorizontal(*ship);
@@ -26,7 +38,6 @@ TEST_CASE("Ship is horizontal","[testIsHorizontal][!benchmark]")
     }
     for(int i=0;ship!=ships1.end();i++,ship++)
     {
-        CHECK(isHorizontal(*ship) == false);
         BENCHMARK("Check ship is vertical")
         {
             return isHorizontal(*ship);
