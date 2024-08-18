@@ -10,6 +10,7 @@ add_executable(opponentBoardTests
               )
 
 target_link_libraries(opponentBoardTests PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(opponentBoardTests PUBLIC opponentBoard)
+target_link_libraries(playerBoardTests   PUBLIC  utilities)
+target_link_libraries(opponentBoardTests PUBLIC  opponentBoard)
 
 add_test(NAME opponentBoardTests COMMAND opponentBoardTests)

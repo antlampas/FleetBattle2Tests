@@ -15,9 +15,9 @@ add_executable(playerTests
               )
 
 target_link_libraries(playerTests PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(playerTests PUBLIC utilities)
-target_link_libraries(playerTests PUBLIC playerBoard)
-target_link_libraries(playerTests PUBLIC opponentBoard)
-target_link_libraries(playerTests PUBLIC player)
+target_link_libraries(playerTests PUBLIC  utilities)
+target_link_libraries(playerTests PUBLIC  playerBoard)
+target_link_libraries(playerTests PUBLIC  opponentBoard)
+target_link_libraries(playerTests PUBLIC  player)
 
 add_test(NAME playerTests COMMAND playerTests)
