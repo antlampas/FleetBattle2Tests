@@ -7,7 +7,7 @@ using namespace fleetBattle;
 
 TEST_CASE("Get opponent board status", "[testGetBoardStatus]")
 {
-    BoardType blankBoard {};
+    BoardType blankBoard;
 
     for(int row: {0,1,2,3,4,5,6,7,8,9})
     {

@@ -12,7 +12,7 @@ TEST_CASE("Get board status","[testGetBoardStatus]")
                                         ShipPosition{{9,5},{9,8}},
                                         ShipPosition{{1,4},{3,4}},
                                         ShipPosition{{3,6},{8,6}}
-                                    }
+                                    };
     
     BoardType whiteBoard{};
     BoardType board{};
@@ -24,13 +24,13 @@ TEST_CASE("Get board status","[testGetBoardStatus]")
         for(int column: {0,1,2,3,4,5,6,7,8,9})
         {
             whiteBoard.at(row).push_back('W');
-            board.at(row).push_back('W')
+            board.at(row).push_back('W');
         }
     }
 
     for(auto ship: ships)
         for(int row=ship.first.first;row<=ship.second.first;row++)
-            for(int column=ship.first.second;column>=ship.second.second;column++)
+            for(int column=ship.first.second;column<=ship.second.second;column++)
                 board.at(row).at(column) = 'S';
 
     playerBoard board1{};
@@ -40,14 +40,14 @@ TEST_CASE("Get board status","[testGetBoardStatus]")
     CHECK(board2.getBoardStatus() == board);
 }
 
-TEST_CASE("Get board status benchmark","[!benckmark]")
+TEST_CASE("Get board status benchmark","[!benchmark]")
 {
     std::vector<ShipPosition> ships {   ShipPosition{{0,0},{0,1}},
                                         ShipPosition{{0,1},{0,6}},
                                         ShipPosition{{9,5},{9,8}},
                                         ShipPosition{{1,4},{3,4}},
                                         ShipPosition{{3,6},{8,6}}
-                                    }
+                                    };
     
     BoardType whiteBoard{};
     BoardType board{};
@@ -59,13 +59,13 @@ TEST_CASE("Get board status benchmark","[!benckmark]")
         for(int column: {0,1,2,3,4,5,6,7,8,9})
         {
             whiteBoard.at(row).push_back('W');
-            board.at(row).push_back('W')
+            board.at(row).push_back('W');
         }
     }
 
     for(auto ship: ships)
         for(int row=ship.first.first;row<=ship.second.first;row++)
-            for(int column=ship.first.second;column>=ship.second.second;column++)
+            for(int column=ship.first.second;column<=ship.second.second;column++)
                 board.at(row).at(column) = 'S';
 
     playerBoard board1{};
