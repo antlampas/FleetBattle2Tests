@@ -24,7 +24,7 @@ TEST_CASE("Get square status", "[testGetSquareStatus]")
     {
         for(int column: {0,1,2,3,4,5,6,7,8,9})
         {
-            CHECK(board.getSquareStatus(std::pair<int,int>(row,column)) == 'W');
+            CHECK(board.getSquareStatus(DecodedCoordinates(row,column)) == 'W');
         }
     }
 }
@@ -50,7 +50,7 @@ TEST_CASE("Get square status benchmark","[!benchmark]")
         {
             BENCHMARK("Get square status")
             {
-                return board.getSquareStatus(std::pair<int,int>(row,column)) == 'W';
+                return board.getSquareStatus(DecodedCoordinates(row,column)) == 'W';
             };
         }
     }
