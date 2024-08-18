@@ -2,7 +2,6 @@
 
 get_directory_property(MYDEFS COMPILE_DEFINITIONS)
 
-
 set(libraries "")
 
 if("${MYDEFS}" MATCHES "TESTOPPONENTBOARD")
