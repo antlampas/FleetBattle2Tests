@@ -5,7 +5,7 @@
 
 using namespace fleetBattle;
 
-TEST_CASE("","[]")
+TEST_CASE("Is ship sunk","[testIsShipSunk]")
 {
     std::vector<ShipPosition> ships {   ShipPosition{{0,0},{0,1}}, //size 2
                                         ShipPosition{{1,4},{3,4}}, //size 3
@@ -16,17 +16,23 @@ TEST_CASE("","[]")
     
     player playerA{ships};
 
-    CHECK(playerA.isShipSunk(ships.at(0)) == false);
+    CHECK(playerA.getSunkShipsCount() == 0);
 
     playerA.checkShoot(std::make_pair(0,0));
     playerA.checkShoot(std::make_pair(0,1));
 
-    CHECK(playerA.isShipSunk(ships.at(0)) == true);
+    CHECK(playerA.getSunkShipsCount() == 1);
+
+    playerA.checkShoot(std::make_pair(1,4));
+    playerA.checkShoot(std::make_pair(2,4));
+    playerA.checkShoot(std::make_pair(3,4));
+
+    CHECK(playerA.getSunkShipsCount() == 2);
 }
 
-TEST_CASE("","[!benchmark]")
+TEST_CASE("Is ship sunk benchmark","[!benchmark]")
 {
-    BENCHMARK("")
+    BENCHMARK("Is ship sunk")
     {
 
     };
