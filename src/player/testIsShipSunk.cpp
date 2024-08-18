@@ -13,6 +13,15 @@ TEST_CASE("","[]")
                                         ShipPosition{{0,1},{0,5}}, //size 5
                                         ShipPosition{{3,6},{8,6}}  //size 6
                                     };
+    
+    player playerA{ships};
+
+    CHECK(playerA.isShipSunk(ships.at(0)) == false);
+
+    playerA.checkShoot(std::make_pair(0,0));
+    playerA.checkShoot(std::make_pair(0,1));
+
+    CHECK(playerA.isShipSunk(ships.at(0)) == true);
 }
 
 TEST_CASE("","[!benchmark]")
