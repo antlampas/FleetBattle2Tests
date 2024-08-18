@@ -13,9 +13,11 @@ TEST_CASE("Player constructor","[testPlayerConstructor]")
                                         ShipPosition{{0,1},{0,5}}, //size 5
                                         ShipPosition{{3,6},{8,6}}  //size 6
                                     };
-    player playerA {ships};
+    BoardType board{makeBoardFromShipsList(ships)};
 
-    CHECK(true);
+    player playerA{ships};
+
+    CHECK(playerA.checkOwnBoard() == board);
 }
 
 TEST_CASE("Player constructor benchmark","[!benchmark]")
