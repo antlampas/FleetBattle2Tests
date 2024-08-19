@@ -22,4 +22,3 @@ target_link_libraries(playerTests PUBLIC  player)
 
 add_test(NAME playerTests COMMAND playerTests)
 
-catch_discover_tests(tests)

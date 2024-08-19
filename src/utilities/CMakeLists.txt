@@ -7,6 +7,7 @@ add_executable(utilitiesTests
                 testIsHorizontal.cpp
                 testIsVertical.cpp
                 testShipsOverlap.cpp
+                testTokenizeMessage.cpp
               )
 
 target_link_libraries(utilitiesTests PRIVATE Catch2::Catch2WithMain)
@@ -14,4 +15,3 @@ target_link_libraries(utilitiesTests PUBLIC  utilities)
 
 add_test(NAME utilitiesTests COMMAND utilitiesTests)
 
-catch_discover_tests(tests)
