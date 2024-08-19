@@ -14,3 +14,5 @@ target_link_libraries(playerBoardTests   PUBLIC  utilities)
 target_link_libraries(opponentBoardTests PUBLIC  opponentBoard)
 
 add_test(NAME opponentBoardTests COMMAND opponentBoardTests)
+
+catch_discover_tests(tests)

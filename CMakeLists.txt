@@ -8,7 +8,6 @@ project(FleetBattle2Tests
         HOMEPAGE_URL "https://github.com/antlampas/FleetBattle2Tests"
         LANGUAGES "CXX")
 
-include(CTest)
 include(FetchContent)
 
 FetchContent_Declare(
@@ -24,6 +23,9 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(fleetbattle catch2)
+
+include(CTest)
+include(Catch)
 
 if("${CMAKE_BUILD_TYPE}" MATCHES "Debug")
 add_definitions(-DDEBUG)
