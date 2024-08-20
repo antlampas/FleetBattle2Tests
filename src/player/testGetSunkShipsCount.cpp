@@ -14,7 +14,7 @@ TEST_CASE("Get sunk ships count","[testGetSunkShipsCount]")
                                         ShipPosition{{3,6},{8,6}}  //size 6
                                     };
 
-    player p{p};
+    player p{ships};
 
     CHECK(p.getSunkShipsCount() == 0);
 
