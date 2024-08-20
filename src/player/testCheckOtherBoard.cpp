@@ -6,7 +6,7 @@
 
 using namespace fleetBattle;
 
-TEST_CASE("","[]")
+TEST_CASE("Check Other Board","[testCheckOtherBoard]")
 {
     std::vector<ShipPosition> ships {   ShipPosition{{0,0},{0,1}}, //size 2
                                         ShipPosition{{1,4},{3,4}}, //size 3
@@ -28,9 +28,9 @@ TEST_CASE("","[]")
     CHECK(p.checkOtherBoard() == blankBoard);
 }
 
-TEST_CASE("","[!benchmark]")
+TEST_CASE("Check Other Board benchmark","[!benchmark]")
 {
-    BENCHMARK("")
+    BENCHMARK("Check Other Board")
     {
 
     };
