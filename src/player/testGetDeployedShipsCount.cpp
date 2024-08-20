@@ -5,7 +5,7 @@
 
 using namespace fleetBattle;
 
-TEST_CASE("","[]")
+TEST_CASE("Get deployed ships count","[testGetDeployedShipsCount]")
 {
     std::vector<ShipPosition> ships {   ShipPosition{{0,0},{0,1}}, //size 2
                                         ShipPosition{{1,4},{3,4}}, //size 3
@@ -18,9 +18,9 @@ TEST_CASE("","[]")
     CHECK(p.getDeployedShipsCount() == 5);
 }
 
-TEST_CASE("","[!benchmark]")
+TEST_CASE("Get deployed ships count benchmark","[!benchmark]")
 {
-    BENCHMARK("")
+    BENCHMARK("Get deployed ships count")
     {
 
     };
