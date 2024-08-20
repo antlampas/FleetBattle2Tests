@@ -10,8 +10,7 @@ add_executable(agentTests
 )
 
 target_link_libraries(agentTests PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(playerBoardTests   PUBLIC  utilities)
-target_link_libraries(agentTests PUBLIC  agent)
+target_link_libraries(agentTests PUBLIC  utilities agent)
 
 add_test(NAME agentTests COMMAND agentTests)
 
