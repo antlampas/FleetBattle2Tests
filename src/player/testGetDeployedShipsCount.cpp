@@ -13,6 +13,9 @@ TEST_CASE("","[]")
                                         ShipPosition{{0,1},{0,5}}, //size 5
                                         ShipPosition{{3,6},{8,6}}  //size 6
                                     };
+    player p{ships};
+
+    CHECK(p.getDeployedShipsCount() == 5);
 }
 
 TEST_CASE("","[!benchmark]")

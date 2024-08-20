@@ -7,7 +7,7 @@ add_executable(playerTests
 #                testCheckOtherBoard.cpp
 #                testCheckOwnBoard.cpp
                 testCheckShoot.cpp
-#                testGetDeployedShipsCount.cpp
+                testGetDeployedShipsCount.cpp
 #                testGetSunkShipsCount.cpp
                 testIsShipSunk.cpp
                 testPlayerConstructor.cpp
