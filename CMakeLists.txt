@@ -8,6 +8,8 @@ project(FleetBattle2Tests
         HOMEPAGE_URL "https://github.com/antlampas/FleetBattle2Tests"
         LANGUAGES "CXX")
 
+set(CMAKE_CXX_STANDARD 20)
+
 include(FetchContent)
 
 FetchContent_Declare(

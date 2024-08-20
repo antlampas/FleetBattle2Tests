@@ -2,6 +2,7 @@
 #include "catch2/benchmark/catch_benchmark.hpp"
 
 #include "player.hpp"
+#include <ranges>
 
 using namespace fleetBattle;
 
@@ -13,6 +14,18 @@ TEST_CASE("","[]")
                                         ShipPosition{{0,1},{0,5}}, //size 5
                                         ShipPosition{{3,6},{8,6}}  //size 6
                                     };
+
+    BoardType blankBoard{};
+    for(int row: std::ranges::iota_view{0,9})
+    {
+        blankBoard.push_back(ColumnType());
+        for(int column: std::ranges::iota_view{0,9})
+            blankBoard.at(row).push_back('W');
+    }
+
+    player p{ships};
+
+    CHECK(p.checkOtherBoard() == blankBoard);
 }
 
 TEST_CASE("","[!benchmark]")
