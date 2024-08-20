@@ -16,10 +16,10 @@ TEST_CASE("Check Other Board","[testCheckOtherBoard]")
                                     };
 
     BoardType blankBoard{};
-    for(int row: std::ranges::iota_view{0,9})
+    for(int row: std::ranges::iota_view{0,10})
     {
         blankBoard.push_back(ColumnType());
-        for(int column: std::ranges::iota_view{0,9})
+        for(int column: std::ranges::iota_view{0,10})
             blankBoard.at(row).push_back('W');
     }
 
