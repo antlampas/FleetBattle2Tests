@@ -5,7 +5,7 @@ get_directory_property(MYDEFS COMPILE_DEFINITIONS)
 add_executable(playerTests
                 testAddSunkShips.cpp
                 testCheckOtherBoard.cpp
-#                testCheckOwnBoard.cpp
+                testCheckOwnBoard.cpp
                 testCheckShoot.cpp
                 testGetDeployedShipsCount.cpp
                 testGetSunkShipsCount.cpp
