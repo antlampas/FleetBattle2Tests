@@ -4,6 +4,10 @@ get_directory_property(MYDEFS COMPILE_DEFINITIONS)
 
 set(libraries "")
 
+if("${MYDEFS}" MATCHES "TESTAGENT")
+    add_subdirectory(agent agent)
+    list(APPEND libraries "AgentTests")
+endif()
 if("${MYDEFS}" MATCHES "TESTOPPONENTBOARD")
     add_subdirectory(opponentBoard opponentBoard)
     list(APPEND libraries "opponentBoardTests")
